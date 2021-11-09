@@ -22,12 +22,10 @@ public class EmployeeService {
 		return employeeRepository.save(employee);
 	}
 
-	public ResponseTemplate getUserWithTeam(Long empId) {
+	public ResponseTemplate getEmployeeWithTeam(Long empId) {
 		ResponseTemplate template = new ResponseTemplate();
 		Employee emp = employeeRepository.findByEmpId(empId);
 		Team team = restTemplate.getForObject("http://TEAM-SERVICE/team/" + emp.getTeamId(), Team.class);
-		//Team team = restTemplate.getForObject("http://localhost:8002/team/" + emp.getTeamId(), Team.class);
-		System.out.println("http://TEAM-SERVICE/team/" + emp.getTeamId());
 		template.setEmployee(emp);
 		template.setTeam(team);
 		return template;

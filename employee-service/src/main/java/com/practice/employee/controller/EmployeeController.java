@@ -26,7 +26,7 @@ public class EmployeeController {
 	
 	@GetMapping("/{id}")
 	public ResponseTemplate getEmployeeWithTeam(@PathVariable("id") Long empId) {
-		return employeeService.getUserWithTeam(empId);
+		return employeeService.getEmployeeWithTeam(empId);
 	}
 	
 }

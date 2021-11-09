@@ -9,13 +9,12 @@ import javax.persistence.Id;
 public class Team {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long teamId;
 	private String teamName;
 	private String teamLead;
 	private String projectName;
-	
-	
+		
 	public Team() {
 		
 	}

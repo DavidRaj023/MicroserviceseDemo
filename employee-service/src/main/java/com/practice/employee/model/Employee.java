@@ -8,57 +8,66 @@ import javax.persistence.Id;
 @Entity
 public class Employee {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long empId;
-	private String firstNmae;
+	private String firstName;
 	private String lastName;
 	private String email;
-	private String teamId;
+	private int teamId;
 	
 	public Employee() {
 		
 	}
-	
+
 	public Long getEmpId() {
 		return empId;
 	}
+
 	public void setEmpId(Long empId) {
 		this.empId = empId;
 	}
-	public String getFirstNmae() {
-		return firstNmae;
+
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstNmae(String firstNmae) {
-		this.firstNmae = firstNmae;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTeamId() {
+
+	public int getTeamId() {
 		return teamId;
 	}
-	public void setTeamId(String teamId) {
+
+	public void setTeamId(int teamId) {
 		this.teamId = teamId;
 	}
-	
-	
-	public Employee(Long empId, String firstNmae, String lastName, String email, String teamId) {
+
+	public Employee(Long empId, String firstName, String lastName, String email, int teamId) {
 		super();
 		this.empId = empId;
-		this.firstNmae = firstNmae;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.teamId = teamId;
 	}
+	
 	
 	
 	
